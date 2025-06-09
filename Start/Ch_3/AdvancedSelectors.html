@@ -10,19 +10,19 @@
             $("#btnRun").on("click", function() {
                 // The child selector "parent > child" selects "child" elements that are
                 // immediate descendants of the "parent"
-
+                //$("div > p").css("border","3px solid red");
                 
                 // The descendant selector "ancestor descendant" selects "descendant" elements
                 // as long as they have an "ancestor" element somewhere above them
-
+                //$("div p.a").css("border", "3px solid red")
                 
                 // The next adjacent selector "prev + next" selects the "next" element if it
                 // is immediately preceded by a "prev" element
+                //$("ul + div").css("border", "3px solid red");
 
-                
                 // Next sibling selector "prev ~ siblings" selects all "siblings" elements that come
                 // after a "prev" element
-
+                $("#para1 ~ p").css("border", "3px solid red");
             });
         });
 
