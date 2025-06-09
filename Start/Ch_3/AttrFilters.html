@@ -9,16 +9,16 @@
         $("document").ready(function() {
             $("#btnRun").on("click", function() {
                 // Test to see if an attribute is present
-
+                //$("p[class]").css("border","3px solid red");
                 
                 // Test to see if an attribute equals a specific value
-
+                //$("p[id=para1]").css("border","3px solid red");
                 
                 // Test to see if an attribute name starts with a specific string
-
+                //$("p[id^=para]").css("border","3px solid red");
                 
                 // Test more than one attribute value at a time
-
+                  $("p[id^=para][lang*=en-]").css("border","3px solid red");
             }); 
         });
     </script>
