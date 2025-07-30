@@ -9,13 +9,15 @@
         $("document").ready(function() {
             $("#btnRun").on("click", () => {
                 // Wrap HTML content around elements in the page
-
-                
+                //$("#example p").wrap("<div style='color:red' />");
+                //$("#example p").wrapAll("<div style='color:red' />");
                 // Remove content from the page
+                //$("#example").empty() 
+                //$("#example p.a, #example p.b").detach();
 
-                
                 // Replace content within the page
-
+                //$("<div>replaced</div>").replaceAll("#example p[id]");
+                $("#example p").replaceWith(replacementFn);
             });
         });
     

@@ -9,7 +9,10 @@
         $("document").ready(function() {
             $("#btnRun").on("click", () => {
                 // Read the alt attributes from all images
-
+                $("#example").after("<p id='alts'>");
+                $("img").each(function() {
+                    $("#alts").append($(this).attr("alt")+ " ");
+                })
                 
                 // Add a title attribute to all of the images
 
