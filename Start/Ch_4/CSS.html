@@ -9,26 +9,36 @@
         $("document").ready(function() {
             $("#setProp").on("click", function(evt) {
                 // Set individual CSS properties
-
+                $("#example p").css("text-decoration", "overline")
+                .css("font-size", "+=1pt");
             });
 
             $("#setProps").on("click", function(evt) {
                 // Set multiple CSS properties
-
+                $("#example p").css({
+                    "font-weight": "bold",
+                    "color": "red",
+                    "text-decoration": "underline"
+                })
             });
 
             $("#addCl").on("click", function(evt) {
                 // Add a class to a set of elements
+                $("#example p").addClass("pClass");
+                
 
             });
 
             $("#rmCl").on("click", function(evt) {
                 // Remove a class from a set of elements
+                $("#example p").removeClass("pClass");
 
             });
 
             $("#toggleCl").on("click", function(evt) {
                 // Toggle a class on a set of elements
+                $("#example p").toggleClass("pClass");
+
 
             });
         });
