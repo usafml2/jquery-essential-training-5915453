@@ -8,21 +8,35 @@
     <script type="text/javascript">
         $(function() {
             // Use mouseover and mouseleave to toggle the background color
-
-            
+            $("#evtTarget").on("mouseover mouseleave", highlight); 
+                     
             // Use "off" to stop listening to an event
-
+            $("#evtTarget").on("click", function(evt) {
+                $("#evtTarget").off("mouseover mouseleave", highlight)
+                $("#evtTarget").html("<p>You shut off the hover effect.</p>");
+                $("#evtTarget").removeClass("highlighted");
+            })
             
             // use the "one" function to attach a one-time handler to an element
+            $("#btnOneTime").one("click", function(evt) {
+                $(this).prop("disabled", true);
+                $(this).text("Clicked");
+            })
 
             
             // Listen for keypress events
-
+               $("#textEntry").on("keypress", function(evt) {
+                 $("#keyPress").text(String.fromCharCode(evt.charCode) + ", code: " + evt.charCode);
+            });
+        
         });
+
+        
 
         function highlight(evt) {
             $("#evtTarget").toggleClass("highlighted");        
         }
+    
     </script>
     <style type='text/css'>
         .highlighted {
