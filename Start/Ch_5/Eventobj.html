@@ -37,11 +37,28 @@
         
         function updateEventDetails(evt) {
             // clear any current text before we update the value fields
-            
+            $(".detailLine span[id]").text("");
             
             // Populate the fields with the event data
+            $("#evtType").text(evt.type);
+            $("#evtWhich").text(evt.which);
+            $("#evtTarget").text(evt.target.id);
+            if (evt.relatedTarget) {
+                $("#evtRelated").text(evt.relatedTarget.tagName + "#" + evt.relatedTarget.id);
+            }
+            $("#evtPageX").text(evt.pageX);
+            $("#evtPageY").text(evt.pageY);
+        
+            $("#evtClientX").text(evt.clientX);
+            $("#evtClientY").text(evt.clientY);
 
+            $("#evtMetaKey").text(evt.metaKey);
+
+            if (evt.data) {
+                $("#evtData").text(evt.data.name);
+            }
         }
+        
     </script>
     <style>
         #mainDiv {
