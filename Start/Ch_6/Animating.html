@@ -9,15 +9,15 @@
         $(function() {
             // Animate individual properties
             $("#right").on("click", function() {
-
+               $("#theDiv").animate({width: "500px"}, 1000);
             });
             $("#text").on("click", function() {
-
+               $("#theDiv").animate({fontSize: "24pt"}, 1000);
             });
 
             // Animate the position of the element
             $("#move").on("click", function() {
-
+               $("#theDiv").animate({left: "500"}, 1000), "linear";
             });
 
             // Animate multiple properties at the same time
