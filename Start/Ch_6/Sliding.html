@@ -9,17 +9,17 @@
         $(function() {
             // Slide an element up
             $("#slideup").on("click", function() {
-
+               $("#theDiv").slideUp("fast");
             });
 
             // Slide an element down
             $("#slidedown").on("click", function() {
-
+                 
             });
 
             // Toggle the slide effect
             $("#toggle").on("click", function() {
-
+              $("#theDiv").slideToggle("slow", onToggleFinished);
             });
         });
         
