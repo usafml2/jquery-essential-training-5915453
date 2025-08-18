@@ -12,14 +12,24 @@
         <script type="text/javascript" src="../jquery-3.7.1.min.js"></script>
         <script type="text/javascript">
             $("document").ready(function () {
-                $("#btnGetText").on("click", { url: "testdata.txt" }, getData);
+                $("#btnGetText").on("click", { url: "testdata1.txt" }, getData);
                 $("#btnGetHTML").on("click", { url: "testdata.html" }, getData);
             });
 
             function getData(evt) {
                 // Implement the AJAX code here
-
-            }
+                $.ajax(evt.data.url)
+                .done(function(data, status, result) {
+                    $("#ajaxContent").append(data);
+                    console.log("Success!");
+                })
+                .fail(function(xhr, status, strErr) {
+                    console.log("There was an error: " + strErr);
+                })
+                .always(function (xhr, status, strErr) {
+                    console.log("Request is complete");
+                })
+          }
         </script>
     </head>
 
