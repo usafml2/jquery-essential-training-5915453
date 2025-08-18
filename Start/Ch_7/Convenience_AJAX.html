@@ -20,14 +20,14 @@
         
         function getData() {
             // use the get() shorthand method to request a resource
-            
+            $.get("testdata.txt", successFn);
         }
 
         function loadData() {
             // the load() shorthand method performs the common task of retrieving HTML content
             // and inserts the returned content into the specified element. 
             // you can also specify a portion of the content to load
-
+            $("#ajaxContent").load("testdata.html p:last");
         }
 
         function successFn(result) {
