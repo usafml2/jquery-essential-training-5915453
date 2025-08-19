@@ -29,19 +29,12 @@
         }
 
         function getJSONData() {
-            const flickrAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-            $.getJSON(flickrAPI, {
-                tags: "space needle",
-                tagmode: "any",
-                format: "json"},
-                successFn);
-
-            }
-        
+            $.getJSON("/flickr", successFn);
+        }
 
         function successFn(result) {
-          $("#ajaxContent").empty();
-          let items = result.items.slice(0,4);
+            $("#ajaxContent").empty();
+            let items = result.items.slice(0, 4);
             items.forEach(item => {
                 $("<img>").attr("src", item.media.m).appendTo("#ajaxContent");
             });

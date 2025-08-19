@@ -17,22 +17,32 @@
             // Register the global event handlers for AJAX events
             
             // ajaxStart fires when the first request is about to be sent
-
+            $(document).on("ajaxStart", function() {
+                console.log("Ajax is staring");
+            })
             
             // ajaxStop fires when all requests have completed
-
-            
+            $(document).on("ajaxStop", function() {
+                console.log("Ajax request ended");
+            })            
             // ajaxSend fires before a request is sent
-
-
+            $(document).on("ajaxSend", function() {
+                console.log("About to send rrequest...");
+            })
             // ajaxComplete fires when a request completes
-
+            $(document).on("ajaxSend", function() {
+                console.log("Everything's finished!");
+            })
             
             // ajaxError fires when an ajax request results in an error
-
+            $(document).on("ajaxError", function() {
+                console.log("There is a problem with the request");
+            })
             
             // ajaxSuccess fires when an ajax request completes successfully
-
+            $(document).on("ajaxSuccess", function() {
+                console.log("Looks like everything worked");
+            })
             
             $("#btnGetData").on("click", getData)
         });
