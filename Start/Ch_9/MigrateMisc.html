@@ -10,29 +10,42 @@
             $("#addCl").on("click", function(evt) {
                 // Add a class to a set of elements
                 // $("#para1").addClass("pClass");
+                let elem = document.querySelector("#para1");
+                elem.classList.add("pClass");
 
             });
 
             $("#rmCl").on("click", function(evt) {
                 // Remove a class from a set of elements
                 // $("#example p").removeClass("pClass");
-
+                let elems = document.querySelectorAll("#example p");
+                elems.forEach(elem => {
+                    elem.classList.remove("pClass");
+                })
             });
 
             $("#toggleCl").on("click", function(evt) {
                 // Toggle a class on a set of elements
                 // $("#example p").toggleClass("pClass");
+                let elems = document.querySelectorAll("#example p");
+                elems.forEach(elem => {
+                    elem.classList.toggle("pClass");
+                })
 
             });
 
             $("#changeText").on("click", () => {
                 // $("#example p:last").text("I've changed the last paragraph");
+                document.querySelector("#example p:last-of-type").textContent = "I've changed the last apragraph";
+
 
             });
 
             $("#newPara").on("click", () => {
                 // $("#example").append("<p>New Paragraph</p>");
-
+                let newP = document.createElement("p");
+                newP.appendChild(document.createTextNode("New Paragraph"));
+                document.querySelector("#example").appendChild(newP);
             });
 
         });
