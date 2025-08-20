@@ -10,15 +10,19 @@
             $("#btnRun").on("click", function() {
                 // Select an element with a specific ID
                 // $("#example").css("border", "3px solid red");
-
+                //document.querySelector("#example").setAttribute("style", "border: 3px solid red");
 
                 // Select all the <p> tags
                 // $("#example p").css("border", "3px solid red");
-
+            //     document.querySelectorAll("#example p").forEach(elem => {
+            //         elem.setAttribute("style", "border: 3px solid red");
+            // })
 
                 // Select even-numbered <p> tags
                 // $("#example p:even").css("background-color", "lightyellow");
-
+                document.querySelectorAll("#example p:nth-child(2n-1)").forEach(elem => {
+                    elem.setAttribute("style", "background-color: lightyellow");
+                });
             });
         });
     </script>
