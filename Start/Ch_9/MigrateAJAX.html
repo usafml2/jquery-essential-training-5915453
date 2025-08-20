@@ -35,10 +35,33 @@
 
             // Standard browser API version
             async function getData_fetch(evt) {
-
-            }
-        </script>
+                 let response = await fetch(evt.data.url) 
+                 try {
+                    const headers = response.headers;
+                    const type = headers.get("Content-Type");
+                    let data = await response.text();
+                    if (type.indexOf("text/html") != -1) {
+                        document.querySelector("#ajaxContent").innerHTML = data;
+                        console.log("Success!");
+                    }
+                    else {
+                        document.querySelector("#ajaxContent").append(data);
+                        console.log("Success!");
+                    }
+                 }
+                 catch (error) {
+                    console.log("There was an error: " + error);
+                 }
+                 finally {
+                    console.log("Request complete!")
+                 }
+                 }
+         </script>
+                  
     </head>
+
+
+    
 
     <body>
         <h1>Migrating from jQuery AJAX</h1>
